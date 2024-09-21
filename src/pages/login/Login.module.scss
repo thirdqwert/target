@@ -1,0 +1,101 @@
+.login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__cnt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 890px;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        max-width: 560px;
+        width: 100%;
+
+        input {
+            border: 1px solid #000;
+            border-radius: 18px;
+            outline: none;
+            color: black;
+            padding: 12px 22px;
+            font-size: 25px;
+            background: #f2f2f7;
+
+            &::placeholder {
+                color: rgb(130, 130, 130);
+                user-select: none;
+            }
+
+            &:nth-child(1) {
+                margin-bottom: 20px;
+            }
+        }
+
+        button {
+            border-radius: 18px;
+            width: 255px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            background: black;
+            color: white;
+            margin: 0 auto;
+            font-size: 25px;
+            margin-top: 50px;
+        }
+    }
+
+    &__title {
+        font-size: 70px;
+        color: #000;
+        padding-bottom: 80px;
+    }
+
+    &__contacts {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 30px;
+        column-gap: 20px;
+        justify-content: space-between;
+        &_left {
+            p {
+                font-size: 24px;
+                @media (max-width:430px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &_right {}
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            column-gap: 30px;
+            flex-wrap: wrap;
+            li {
+                a {
+                    font-weight: 400;
+                    font-size: 24px;
+                    color: black;
+                    @media (max-width:430px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+    }
+}

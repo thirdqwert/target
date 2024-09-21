@@ -1,0 +1,9 @@
+$CormorantGaramond: ('Regular', 400);
+
+@each $name,$weight in $CormorantGaramond {
+    @font-face {
+        font-family: 'CormorantGaramond';
+        src: url('../assets/fonts/CormorantGaramond-#{$name}.ttf');
+        font-weight: $weight;
+    }
+}
