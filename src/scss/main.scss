@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'CormorantGaramond';
     font-weight: 400;
+    background: black;
 }
 
 a {
@@ -17,5 +18,22 @@ ul {
 }
 
 body {
-    background: #f2f2f7;
+}
+.container {
+    max-width: 1614px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+canvas {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: transparent;
+    pointer-events: none;
 }

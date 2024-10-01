@@ -7,3 +7,12 @@ $CormorantGaramond: ('Regular', 400);
         font-weight: $weight;
     }
 }
+$Aleo: ('Regular', 400);
+
+@each $name,$weight in $Aleo {
+    @font-face {
+        font-family: 'Aleo';
+        src: url('../assets/fonts/Aleo-#{$name}.ttf');
+        font-weight: $weight;
+    }
+}

@@ -1,0 +1,15 @@
+.header {
+    &__nav {
+        display: flex;
+
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        font-weight: 400;
+        font-size: 64px;
+        color: white;
+        text-transform: uppercase;
+    }
+}
