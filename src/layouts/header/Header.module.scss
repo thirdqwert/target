@@ -1,15 +1,50 @@
 .header {
     &__nav {
         display: flex;
-
+        align-items: center;
         flex-direction: row;
         justify-content: space-between;
     }
 
     &__logo {
         font-weight: 400;
-        font-size: 64px;
+        font-size: 50px;
         color: white;
         text-transform: uppercase;
     }
+
+    &__themeAndLogout {
+        color: white;
+        user-select: none;
+        cursor: pointer;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__theme {
+        width: 50px;
+        height: 25px;
+        background: white;
+        border-radius: 20px;
+        border: 1px solid white;
+        background: transparent;
+        display: flex;
+        align-items: center;
+
+        span {
+            width: 50%;
+            height: 23px;
+            background: rgb(255, 255, 255);
+            border-radius: 100%;
+            transition: .3s;
+            &.light {
+                transform: translateX(100%);
+            }
+        }
+    }
+
+    padding-bottom: 20px;
 }

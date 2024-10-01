@@ -12,18 +12,21 @@
         }
 
         li {
-            padding: 6px 27px;
-            background: #48484a;
-            color: white;
-            border-radius: 55px;
-            font-size: 25px;
+            position: relative;
             cursor: pointer;
             user-select: none;
+            position: relative;
+            padding: 6px 27px;
+            border-radius: 55px;
+            background: rgba(255, 255, 255, 0.192);
+            border: 1px solid rgb(188, 188, 188);
+            color: white;
+            font-size: 20px;
             transition: .2s;
             text-align: center;
 
             &.active {
-                background: #f2f2f7;
+                background: #ffffff;
                 color: black;
             }
         }

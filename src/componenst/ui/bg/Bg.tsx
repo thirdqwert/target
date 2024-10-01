@@ -73,10 +73,10 @@ const Bg: FC = () => {
             allSakura = [...newArray]
             getSakura(allSakura.length)
           }
-          if (this.direction < 65) {
+          if (this.direction < 80) {
             this.x = this.x + this.dx
           }
-          else if (this.direction > 65 && this.direction < 70) {
+          else if (this.direction > 80 && this.direction < 90) {
 
           }
           else {
@@ -90,7 +90,7 @@ const Bg: FC = () => {
 
     function getSakura(i: number) {
       for (i; i < 25; i++) {
-        let radius = Math.random() * (15 - 10) + 10
+        let radius = Math.random() * (15 - 5) + 5
         let x = Math.random() * innerWidth
         let y = -(Math.random() * innerHeight)
         let dx = 0.9

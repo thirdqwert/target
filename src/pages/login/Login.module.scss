@@ -28,12 +28,10 @@
             padding: 12px 22px;
             font-size: 25px;
             background: #f2f2f7;
-            font-family: 'Aleo';
 
             &::placeholder {
                 color: rgb(130, 130, 130);
                 user-select: none;
-                font-family: "CormorantGaramond";
             }
 
             &:nth-of-type(1) {
@@ -50,16 +48,17 @@
             justify-content: center;
             border: none;
             background: black;
+            border: 1px solid white;
             color: white;
             margin: 0 auto;
             font-size: 25px;
-            margin-top: 50px;
+            margin-top: 30px;
         }
     }
 
     &__title {
         font-size: 70px;
-        color: #000;
+        color: white;
         padding-bottom: 80px;
     }
 
@@ -75,14 +74,10 @@
         &_left {
             p {
                 font-size: 24px;
-
                 @media (max-width:430px) {
                     font-size: 16px;
                 }
-
-                &:nth-of-type(1) {
-                    font-family: "Aleo";
-                }
+                color: white;
             }
         }
 
@@ -98,7 +93,7 @@
                 a {
                     font-weight: 400;
                     font-size: 24px;
-                    color: black;
+                    color: white;
 
                     @media (max-width:430px) {
                         font-size: 16px;

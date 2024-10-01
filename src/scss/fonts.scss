@@ -1,18 +1,11 @@
-$CormorantGaramond: ('Regular', 400);
+$Montserrat: ('Regular', 400),
+            ('Medium', 500),
+            ('light', 200),;
 
-@each $name,$weight in $CormorantGaramond {
+@each $name,$weight in $Montserrat {
     @font-face {
-        font-family: 'CormorantGaramond';
-        src: url('../assets/fonts/CormorantGaramond-#{$name}.ttf');
-        font-weight: $weight;
-    }
-}
-$Aleo: ('Regular', 400);
-
-@each $name,$weight in $Aleo {
-    @font-face {
-        font-family: 'Aleo';
-        src: url('../assets/fonts/Aleo-#{$name}.ttf');
+        font-family: 'Montserrat';
+        src: url('../assets/fonts/Montserrat-#{$name}.ttf');
         font-weight: $weight;
     }
 }
