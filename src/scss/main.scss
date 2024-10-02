@@ -1,12 +1,17 @@
 @import url(fonts.scss);
 
+:root {
+    --mainColor: white;
+    --bgColor: black;
+    --bgModules:rgba(255, 255, 255, 0.192);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
     font-weight: 400;
-    background: black;
 }
 
 a {
@@ -17,14 +22,15 @@ ul {
     list-style: none;
 }
 
-body {
-}
+
+
 .container {
     max-width: 1614px;
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
 }
+
 canvas {
     position: fixed;
     width: 100%;
@@ -36,4 +42,17 @@ canvas {
     z-index: 9999;
     background: transparent;
     pointer-events: none;
+}
+
+.wrapper {
+    background: var(--bgColor);
+    color: var(--mainColor);
+    min-height: 100vh;
+    transition: .3s;
+}
+
+.wrapper.light {
+    --bgColor: rgb(255, 226, 253);
+    --mainColor:black;
+    --bgModules:rgba(255, 255, 255, 0.597);
 }

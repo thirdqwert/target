@@ -1,13 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
+let savedTheme = localStorage.getItem('Target-theme')
+
 export interface IInitialState {
-    logOutWin:boolean,
-    theme:string
+    logOutWin: boolean,
+    theme: string,
 }
 
-const initialState:IInitialState = {
+const initialState: IInitialState = {
     logOutWin: false,
-    theme:'dark',
+    theme: savedTheme ? savedTheme : 'dark',
 }
 const mainSlice = createSlice({
     name: "mainSlice",
@@ -19,8 +21,9 @@ const mainSlice = createSlice({
         changeTheme: (state) => {
             let currentTheme = state.theme == 'dark' ? 'light' : 'dark'
             state.theme = currentTheme
+            localStorage.setItem('Target-theme', currentTheme)
         }
     }
 })
-export const { logOutWinStatus,changeTheme } = mainSlice.actions
+export const { logOutWinStatus, changeTheme } = mainSlice.actions
 export default mainSlice.reducer

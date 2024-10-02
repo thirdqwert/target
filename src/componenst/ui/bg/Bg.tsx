@@ -14,6 +14,10 @@ interface ISakura {
 }
 const Bg: FC = () => {
   let canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
   let allSakura: ISakura[] = []
   let img = new Image()
   img.src = lorem
@@ -110,7 +114,21 @@ const Bg: FC = () => {
     }
     getSakura(0)
     animate()
-  }, [])
+        // Обработчик изменения размеров окна
+        const handleResize = () => {
+          setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        // Убираем обработчик при размонтировании компонента
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+  }, [windowSize])
 
   return (
     <>

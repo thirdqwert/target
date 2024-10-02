@@ -9,12 +9,12 @@
     &__logo {
         font-weight: 400;
         font-size: 50px;
-        color: white;
+        color: var(--mainColor);
         text-transform: uppercase;
     }
 
     &__themeAndLogout {
-        color: white;
+        color: var(--mainColor);
         user-select: none;
         cursor: pointer;
         font-size: 20px;
@@ -27,9 +27,8 @@
     &__theme {
         width: 50px;
         height: 25px;
-        background: white;
         border-radius: 20px;
-        border: 1px solid white;
+        border: 1px solid var(--mainColor);
         background: transparent;
         display: flex;
         align-items: center;
@@ -37,7 +36,7 @@
         span {
             width: 50%;
             height: 23px;
-            background: rgb(255, 255, 255);
+            background: var(--mainColor);
             border-radius: 100%;
             transition: .3s;
             &.light {
