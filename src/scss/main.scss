@@ -3,7 +3,9 @@
 :root {
     --mainColor: white;
     --bgColor: black;
-    --bgModules:rgba(255, 255, 255, 0.192);
+    --bgAside: rgb(30, 30, 30);
+    --menuIconInvert: 0;
+    --closeMenuIconInvert: 1;
 }
 
 * {
@@ -53,6 +55,8 @@ canvas {
 
 .wrapper.light {
     --bgColor: rgb(255, 226, 253);
-    --mainColor:black;
-    --bgModules:rgba(255, 255, 255, 0.597);
+    --mainColor: black;
+    --bgAside: rgb(255, 226, 253);
+    --menuIconInvert: 1;
+    --closeMenuIconInvert: 0;
 }

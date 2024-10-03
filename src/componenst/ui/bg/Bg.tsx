@@ -10,7 +10,7 @@ interface ISakura {
   direction: number;
   angle: number;
   draw: () => void;
-  update: () => void;
+  update: (status: number) => void;
 }
 const Bg: FC = () => {
   let canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -39,7 +39,7 @@ const Bg: FC = () => {
       direction: number;
       angle: number;
       draw: () => void;
-      update: () => void;
+      update: (status: number) => void;
       constructor(x: number, y: number, dx: number, dy: number, rgb: string, radius: number, direction: number, angle: number) {
         this.x = x
         this.y = y
@@ -65,8 +65,9 @@ const Bg: FC = () => {
             };
           }
         }
-        this.update = () => {
+        this.update = (deltaTime) => {
           this.draw()
+          const speedFactor = deltaTime / 16.67
           if (this.x - this.radius > innerWidth || this.x + this.radius < 0) {
             let newArray = allSakura.filter((item) => item.x != this.x)
             allSakura = [...newArray]
@@ -78,16 +79,16 @@ const Bg: FC = () => {
             getSakura(allSakura.length)
           }
           if (this.direction < 80) {
-            this.x = this.x + this.dx
+            this.x = this.x + this.dx * speedFactor
           }
           else if (this.direction > 80 && this.direction < 90) {
 
           }
           else {
-            this.x = this.x - this.dx
+            this.x = this.x - this.dx * speedFactor
           }
-          this.y = this.y + this.dy
-          this.angle = this.angle + 0.02
+          this.y = this.y + this.dy * speedFactor 
+          this.angle = this.angle + 0.005 * speedFactor
         }
       }
     }
@@ -105,29 +106,33 @@ const Bg: FC = () => {
         allSakura.push(new Circle(x, y, dx, dy, rgb, radius, direction, angle))
       }
     }
-    function animate() {
+    let lastTime = 0; // Изначально 0, т.к. нет предыдущего кадра
+    function animate(currentTime: number) {
+
+      const deltaTime = currentTime - lastTime; // Время между текущим и предыдущим кадром
+      lastTime = currentTime; // Обновляем lastTime для следующего кадра
       requestAnimationFrame(animate)
       c?.clearRect(0, 0, innerWidth, innerHeight)
       allSakura.forEach((item, i) => {
-        item.update()
+        item.update(deltaTime)
       })
     }
     getSakura(0)
-    animate()
-        // Обработчик изменения размеров окна
-        const handleResize = () => {
-          setWindowSize({
-            width: window.innerWidth,
-            height: window.innerHeight,
-          });
-        };
-    
-        window.addEventListener('resize', handleResize);
-    
-        // Убираем обработчик при размонтировании компонента
-        return () => {
-          window.removeEventListener('resize', handleResize);
-        };
+    animate(0)
+    // Обработчик изменения размеров окна
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Убираем обработчик при размонтировании компонента
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, [windowSize])
 
   return (

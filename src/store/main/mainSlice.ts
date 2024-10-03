@@ -18,8 +18,8 @@ const mainSlice = createSlice({
         logOutWinStatus: (state, action: PayloadAction<boolean>) => {
             state.logOutWin = action.payload
         },
-        changeTheme: (state) => {
-            let currentTheme = state.theme == 'dark' ? 'light' : 'dark'
+        changeTheme: (state,action:PayloadAction<string>) => {
+            let currentTheme = action.payload
             state.theme = currentTheme
             localStorage.setItem('Target-theme', currentTheme)
         }
