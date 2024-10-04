@@ -8,8 +8,8 @@ import Bg from "../../componenst/ui/bg/Bg"
 import { useSelector } from "react-redux"
 import { RootState } from "../../store/store"
 const links = [
-    { id: 1, text: 'Telegram', link: '' },
-    { id: 2, text: 'Instagram', link: '' },
+    { id: 1, text: 'Telegram', link: 'https://t.me/Noziiishka' },
+    { id: 2, text: 'Instagram', link: 'https://www.instagram.com/nozima.mirimova/' },
     // { id: 3, text: 'WhatsApp', link: '' },
 ]
 const Login: FC = () => {
@@ -58,7 +58,8 @@ const Login: FC = () => {
                         </form>
                         <div className={s.login__contacts}>
                             <div className={s.login__contacts_left}>
-
+                                <p>+998 90 037 04 04</p>
+                                <p>Nozima Target</p>
                             </div>
                             <div className={s.login__contacts_right}>
                                 <ul>

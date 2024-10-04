@@ -28,7 +28,7 @@ const Bg: FC = () => {
   let redFlower = new Image()
   redFlower.src = redImg
   let FlowersImg = {
-    1: theme == 'dark' ? [violetFlower ,'rgb(255, 182, 193)'] : [blueFlower,'rgb(175, 238, 238)'],
+    1: theme == 'dark' ? [sakuraFlower ,'rgb(255, 182, 193)'] : [blueFlower,'rgb(175, 238, 238)'],
     2: theme == 'dark' ? [redFlower ,'rgb(255, 0, 0)'] : [blueFlower,'rgb(175, 238, 238)'],
   }
 
