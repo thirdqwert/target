@@ -20,7 +20,7 @@ const SelectTheme: FC<IProps> = ({ options, selectedOption, selectTheme }) => {
                     '&:hover': {
                         border: '1px solid rgb(188, 188, 188)',
                     },
-                    background: 'var(--bgAside)',
+                    background: 'transparent',
                     cursor: 'pointer',
                     width: '150px',
                     transition: '.3s'

@@ -75,14 +75,13 @@
         &_left {
             p {
                 font-size: 24px;
+                color: var(--mainColor);
                 @media (max-width:430px) {
                     font-size: 16px;
                 }
-                color: var(--mainColor);
             }
         }
 
-        &_right {}
 
         ul {
             display: flex;
