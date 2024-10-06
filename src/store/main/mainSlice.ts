@@ -5,7 +5,7 @@ let savedTheme = localStorage.getItem('Target-theme')
 export interface IInitialState {
     logOutWin: boolean,
     theme: string,
-    crntModule: number
+    crntModule: number,
 }
 
 const initialState: IInitialState = {

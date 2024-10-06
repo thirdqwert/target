@@ -5,8 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import LogOut from "../../componenst/logOut/LogOut"
 import { RootState } from "../../store/store"
 import menuIcon from '../../assets/img/menu.svg'
-import { ActionMeta } from 'react-select';
-import SelectTheme from "../../componenst/ui/selectTheme/SelectTheme"
+import SelectBox from "../../componenst/ui/selectBox/SelectBox"
 import closeIcon from '../../assets/img/closeIcon.svg'
 import { useMediaQuery } from "react-responsive"
 export interface IOptions {
@@ -28,7 +27,7 @@ const Header: FC = () => {
     const openModal = () => {
         dispatch(logOutWinStatus(true))
     }
-    const selectTheme = (option: IOptions | null, actionMeta: ActionMeta<IOptions>) => {
+    const selectTheme = (option: any) => {
         if (option) {
             setSelectedOption(option)
             dispatch(changeTheme(option.value))
@@ -53,10 +52,11 @@ const Header: FC = () => {
                         {screenSize &&
                             <div className={s.header__nav_right}>
                                 <p className={s.themeSelect__preText}>Тема:</p>
-                                <SelectTheme
+                                <SelectBox
                                     options={options}
                                     selectedOption={selectedOption}
-                                    selectTheme={selectTheme}
+                                    selectOption={selectTheme}
+                                    boxWidth='150px'
                                 />
                             </div>
                         }
@@ -69,10 +69,11 @@ const Header: FC = () => {
                     {!screenSize &&
                         <div className={s.menu__theme}>
                             <p className={s.themeSelect__preText}>Тема:</p>
-                            <SelectTheme
+                            <SelectBox
                                 options={options}
                                 selectedOption={selectedOption}
-                                selectTheme={selectTheme}
+                                selectOption={selectTheme}
+                                boxWidth='150px'
                             />
                         </div>
                     }

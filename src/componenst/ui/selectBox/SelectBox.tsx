@@ -1,17 +1,17 @@
 import { FC } from "react"
-import Select, { ActionMeta } from "react-select"
-import { IOptions } from "../../../layouts/header/Header"
+import Select from "react-select"
 interface IProps {
-    options: IOptions[],
-    selectedOption: IOptions,
-    selectTheme: (option: IOptions | null, actionMeta: ActionMeta<IOptions>) => void
+    options: any[],
+    selectedOption: any,
+    selectOption: (option: any) => void,
+    boxWidth:string
 }
-const SelectTheme: FC<IProps> = ({ options, selectedOption, selectTheme }) => {
+const SelectBox: FC<IProps> = ({ options, selectedOption, selectOption, boxWidth }) => {
     return (
         <Select
             options={options}
             value={selectedOption}
-            onChange={selectTheme}
+            onChange={selectOption}
             styles={{
                 control: (styles, state) => ({
                     ...styles,
@@ -22,7 +22,7 @@ const SelectTheme: FC<IProps> = ({ options, selectedOption, selectTheme }) => {
                     },
                     background: 'transparent',
                     cursor: 'pointer',
-                    width: '150px',
+                    width: boxWidth,
                     transition: '.3s'
                 }),
                 singleValue: (styles) => ({
@@ -61,4 +61,4 @@ const SelectTheme: FC<IProps> = ({ options, selectedOption, selectTheme }) => {
     )
 }
 
-export default SelectTheme
+export default SelectBox
