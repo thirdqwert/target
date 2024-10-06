@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef, useState } from "react"
-import sakuraImg from '../../../assets/img/sakura-Photoroom.png'
-import violetImg from '../../../assets/img/violet2.png'
+import sakuraImg from '../../../assets/img/pink.png'
+import violetImg from '../../../assets/img/violet.png'
 import blueImg from '../../../assets/img/blue.png'
 import redImg from '../../../assets/img/red.png'
 import { useSelector } from "react-redux"
@@ -113,7 +113,7 @@ const Bg: FC = () => {
     }
     
     function getSakura(i: number) {
-      for (i; i < 25; i++) {
+      for (i; i < 20; i++) {
         let flowerId = Math.floor(Math.random() * (3 - 1) + 1)
         let radius = Math.random() * (15 - 10) + 10
         let x = Math.random() * innerWidth

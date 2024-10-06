@@ -9,7 +9,7 @@ const Home: FC = () => {
     return (
         <>
             <div className={`wrapper ${theme}`}>
-                <Bg />
+                <Bg/>
                 <Header />
                 <Lessons />
             </div>

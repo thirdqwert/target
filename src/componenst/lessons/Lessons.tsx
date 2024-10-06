@@ -1,14 +1,34 @@
-import { FC, useState } from "react"
+import { FC, useEffect, useState } from "react"
 import s from './Lessons.module.scss'
-
+import { useLocation, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../../store/store"
+import { setCrntModule } from "../../store/main/mainSlice"
 
 let data = {
     modules: 7,
 }
 const Lessons: FC = () => {
-    const [crntModule, setCrntModule] = useState(1)
+    let {crntModule} = useSelector((state:RootState) => state.main)
+    let dispatch = useDispatch()
     // автоматически получаю количество модулей
     let modules = [...new Array(data.modules)].map((_, i) => { return { id: i + 1, moduleText: i + 1, } })
+    const navigate = useNavigate()
+    const location = useLocation()
+    
+    useEffect(() => {
+        const params = new URLSearchParams(location.search)
+        
+        dispatch(setCrntModule(Number(params.get('module')) || 1))
+    }, [location.search])
+
+    useEffect(() => {
+        const params = new URLSearchParams()
+
+        crntModule != 1 && params.set('module', String(crntModule))
+
+        navigate(`?${decodeURIComponent(params.toString())}`)
+    }, [crntModule])
 
     return (
         <>
@@ -21,7 +41,7 @@ const Lessons: FC = () => {
                                     `${s.lessons__modules_li} ${s.active}`
                                     :
                                     s.lessons__modules_li} key={item.id}
-                                onClick={() => setCrntModule(item.id)}
+                                onClick={() => dispatch(setCrntModule(item.id))}
                             >
                                 Модуль - {item.moduleText}
                             </li>
