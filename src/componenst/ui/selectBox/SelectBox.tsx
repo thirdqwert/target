@@ -12,6 +12,7 @@ const SelectBox: FC<IProps> = ({ options, selectedOption, selectOption, boxWidth
             options={options}
             value={selectedOption}
             onChange={selectOption}
+            isSearchable={false}
             styles={{
                 control: (styles, state) => ({
                     ...styles,
